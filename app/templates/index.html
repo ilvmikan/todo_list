@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Initial Page{% endblock %}</title>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('index') }}">Página Inicial</a></li>
+            <li><a href="{{ url_for('create') }}">Create</a></li>
+            <li><a href="{{ url_for('delete') }}">Delete</a></li>
+            <li><a href="{{ url_for('edit') }}">Edit</a></li>
+        </ul>
+    </nav>
+
+    {% for task in all_tasks %}
+        <div>
+            <h1>{{ task.name }}</h1>
+            <p>{{ task.description }}</p>
+        </div>
+    {% endfor %}
+
+    <div>
+        {% block content %}{% endblock %}
+    </div>
+
+</body>
+</html>

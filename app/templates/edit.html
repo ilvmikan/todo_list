@@ -1,0 +1,28 @@
+{% extends 'index.html' %}
+
+{% block title %}Edit Task{% endblock %}
+
+{% block content %}
+    <div>
+        <h1>Edit Task</h1>
+
+        <form method="POST">
+            {{ form.csrf_token }}
+            <label for="current_name">Current Task Name:</label>
+            {{ form.current_name }}
+            <br>
+            <label for="new_name">New Task Name:</label>
+            {{ form.new_name }}
+            <br>
+            <label for="task_priority">Task Priority:</label>
+            {{ form.task_priority }}
+            <br>
+            <label for="task_description">Task Description:</label>
+            {{ form.task_description }}
+            <br>
+            <button type="submit">Save Changes</button>
+        </form>
+        
+        
+    </div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'index.html' %}
+
+{% block title %}Create Task{% endblock %}
+
+{% block content %}
+    <h1>Create Task</h1>
+
+    <form method="post" action="{{ url_for('create') }}">
+        {{ form.csrf_token }}
+        <div>
+            <label for="task_name">Name:</label>
+            {{ form.task_name }}
+        </div>
+        <div>
+            <label for="task_priority">Priority:</label>
+            {{ form.task_priority }}
+        </div>
+        <div>
+            <label for="task_description">Description:</label>
+            {{ form.task_description }}
+        </div>
+        <div>
+            <input type="submit" value="Create Task">
+        </div>
+    </form>
+{% endblock %}
